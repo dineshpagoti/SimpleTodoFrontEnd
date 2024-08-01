@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import TodoItem from '../TodoItem'; // Adjust the import path as needed
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
@@ -11,25 +11,25 @@ const SimpleTodos = () => {
   const [inputTodo, setInputTodo] = useState('');
   const [editingTodoId, setEditingTodoId] = useState(null);
   const [editedTodoTitle, setEditedTodoTitle] = useState('');
-  const [token, setToken] = useState(localStorage.getItem('token') || '');
+  const [token] = useState(localStorage.getItem('token') || '');
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const fetchTodos = useCallback(async () => {
     if (token) {
-      fetchTodos();
+      try {
+        const response = await axios.get(`${API_BASE_URL}/todos`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setTodoList(response.data);
+      } catch (error) {
+        console.error('Error fetching todos:', error);
+      }
     }
   }, [token]);
 
-  const fetchTodos = async () => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/todos`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setTodoList(response.data);
-    } catch (error) {
-      console.error('Error fetching todos:', error);
-    }
-  };
+  useEffect(() => {
+    fetchTodos(); // Fetch todos whenever the token changes
+  }, [fetchTodos]);
 
   const onClickAddBtn = async () => {
     if (inputTodo.trim() === '') {

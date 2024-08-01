@@ -1,0 +1,100 @@
+/* Write your CSS here */
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffc2a0;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .bg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    padding: 20px;
+    overflow: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+  .heading {
+    color: #ff8542;
+    font-family: roboto;
+    font-size: 30px;
+  }
+.input-todo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}  
+
+.input-element{
+    font-size: 20px;
+    font-family: roboto;
+    font-weight: bold;
+    padding: 15px;
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #ff8542;
+    cursor: pointer;
+    outline: none;
+    color: cadetblue;
+}
+.add-btn{
+    border: 1px solid #ff8542;
+    cursor: pointer;
+    outline: none; 
+    font-size: 20px;
+    font-family: roboto;
+    font-weight: bold;
+    background-color: lightblue;
+    margin-left: 20px;
+    border-radius: 10px;
+    height: 40px;
+    width: 80px;
+    text-align: center;
+}
+.view-all-btn{
+    margin-top: 50px;
+    background-color: lightsalmon;
+    height: 60px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid #ff8542;
+    cursor: pointer;
+    outline: none; 
+    font-size: 20px;
+    font-family: roboto;
+    font-weight: bold;
+}
+.hide-all-btn{
+    margin-top: 50px;
+    background-color: #42fff2;
+    height: 60px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid #ff8542;
+    cursor: pointer;
+    outline: none; 
+    font-size: 20px;
+    font-family: roboto;
+    font-weight: bold;
+}
+.logout-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  margin: 10px;
+  color: #000000;
+  background-color: #ff0b37;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure the button is on top */
+  margin: 40px;
+}
+

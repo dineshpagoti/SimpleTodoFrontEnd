@@ -1,0 +1,72 @@
+/* Example of including provided CSS in index.css */
+.list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 350px;
+  margin: 10px;
+}
+@media screen and (min-width: 768px) {
+  .list-container {
+    min-width: 700px;
+  }
+}
+.title {
+  color: #000000;
+  font-family: roboto;
+  width: 250px;
+  font-size: 15px;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    width: 600px;
+    font-size: 22px;
+  }
+}
+.button {
+  color: #ff0b37;
+  border: 1px solid #ff0b37;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
+}
+@media screen and (min-width: 768px) {
+  .button {
+    font-size: 20px;
+  }
+}
+.button1 {
+  color: #ff0b37;
+  border: 1px solid #ff0b37;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
+}
+@media screen and (min-width: 768px) {
+  .button1 {
+    font-size: 20px;
+  }
+}
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.input-element1 {
+  font-size: 20px;
+  font-family: roboto;
+  font-weight: bold;
+  padding: 15px;
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #ff8542;
+  cursor: pointer;
+  outline: none;
+  color: cadetblue;
+}
+.input-container2 {
+  display: flex;
+  width: 100%;
+}
